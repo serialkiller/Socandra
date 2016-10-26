@@ -1,0 +1,25 @@
+﻿@model  Socandra.ViewModel.AddProductViewModel
+@{
+    ViewBag.Title = "CreateProduct";
+}
+
+<h2>CreateProductType</h2>
+
+
+<form>
+    <div class="form-group">
+        @Html.LabelFor(m=>m.ProductName)
+        @Html.TextBoxFor(m=>m.ProductName,new { @class="form-control" })
+
+     
+        
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProductType)
+        @Html.DropDownListFor(m => m.ProductType, new SelectList(Model.ProductTypes, "ProductTypeId", "ProductTypeName"), "", new {@class = "form-control"})
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+ 
+</form>
+
